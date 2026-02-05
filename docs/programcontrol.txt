@@ -1,0 +1,9 @@
+// Team member C
+// Testing plan documentation
+
+Use Mockito for unit testing
+
+1) No argument test --> list of numbered files displayed
+2) Single argument test (valid file number) --> contents of file are displayed with default key
+3) Single argument test (invalid file number) --> error message
+4) Two argument test (valid file number and alternate key) --> contents of file are displayed with alternate key
