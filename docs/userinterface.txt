@@ -1,0 +1,9 @@
+// Team Member A
+// Command line interface used by the user to run the program
+
+Add Mockito Testing
+
+displays list of files when no argument is given
+display corresponding file if number argument is given
+exits after display is given post-call upon file w/without argument
+
