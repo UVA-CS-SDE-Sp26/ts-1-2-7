@@ -1,0 +1,40 @@
+Instructions:
+You are responsible for implementing the ciphering feature.
+This feature should accept a ciphered string and return it deciphered.
+The cipher will be stored in a file named key.txt, stored in a folder, ciphers,
+(in the same directory of the program, or in the root of your project folder.)
+This file will contain two lines, the first line is the actual letter,
+the second line is the cipher match. When the cipher is accessed, it must be validated.
+An example will be provided. Document this in cipher.txt.
+
+Team Member D: Kate Walldorf jtu2jm
+
+Questions:
+- 1 input or two?
+- how to validate ciphered text?
+
+Pseudocode:
+
+import scanning tools
+
+Class takes 1 or 2 strings: ciphered text (and key?)
+
+let decipheredText = empty string for deciphered letters to be added to
+let letterCount = integer counting number of letters deciphered
+let keyInput = first line of key
+let keyOutput = second line of key
+let cipheredText = string input
+let currentLetter = string containing the current letter
+let inputIndex = position of the ciphered text letter in the first line of the key
+
+Using scanner, read the key line by line
+keyInput = first line
+keyOutput = second line
+
+while letterCount < cipheredText.length
+    currentLetter = cipheredText at index letterCount
+    inputIndex = index of currentLetter in keyInput
+    decipheredText += keyOutput at inputIndex
+    letterCount ++
+
+return decipheredText
