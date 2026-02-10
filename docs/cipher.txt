@@ -25,7 +25,7 @@ let keyInput = first line of key
 let keyOutput = second line of key
 let cipheredText = string input
 let currentLetter = string containing the current letter
-let inputIndex = position of the ciphered text letter in the first line of the key
+let indexInput = position of the ciphered text letter in the first line of the key
 
 Using scanner, read the key line by line
 keyInput = first line
@@ -33,8 +33,8 @@ keyOutput = second line
 
 while letterCount < cipheredText.length
     currentLetter = cipheredText at index letterCount
-    inputIndex = index of currentLetter in keyInput
-    decipheredText += keyOutput at inputIndex
+    indexInput = index of currentLetter in keyInput
+    decipheredText += keyOutput at indexInput
     letterCount ++
 
 return decipheredText
