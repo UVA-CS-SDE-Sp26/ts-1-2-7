@@ -4,11 +4,17 @@ import java.util.*;
 
 
 public class FileHandler {
-    private static final String dataDirectory = "data";
+    private final String dataDirectory;
+    public FileHandler(String dataDirectory) {
+        this.dataDirectory = dataDirectory;
+    }
+    public FileHandler() {
+        this("data");
+    }
     public List<String> listFiles() throws IOException {
         File data = new File(dataDirectory);
         if (!data.exists() || !data.isDirectory()) {
-            throw new IOException ("Data directory not found:" + dataDirectory);
+            throw new IOException("Data directory not found: " + dataDirectory);
         }
         String[] files = data.list();
 

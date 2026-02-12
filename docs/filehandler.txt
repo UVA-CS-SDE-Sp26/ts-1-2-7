@@ -1,0 +1,20 @@
+Instructions: You are responsible for the part of the problem that reads data files.
+The program should expect files in a folder named data (in the same directory of the program,
+or in the root of your project folder.) When a request for a file is received, this part
+of the program will return the file contents. This part of the program should handle all
+the direct access to files. Document the plan your team makes for the design of your software
+in a text file named filehandler.txt.
+
+Purpose: Reads the files from designated data directory and makes sure there are existing files
+
+Constructor: FileHandler() for default "data" dictionary and a way to test if it is not named data
+
+Methods:
+- List<String> listFiles()
+    - returns a list of the sorted files, but if the data dictionary does not exist or is empty
+      it will return an error
+
+- String reader(String filename)
+    - returns the names of each of the files in the dictionary and an error if it does not exist
+      or is an unexpected format
+
