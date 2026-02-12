@@ -1,9 +1,27 @@
-// Team member C
 // Testing plan documentation
 
 Use Mockito for unit testing
+- Create a dummy object for classes
+- Bugs in classes will not affect testing
 
-1) No argument test --> list of numbered files displayed
-2) Single argument test (valid file number) --> contents of file are displayed with default key
-3) Single argument test (invalid file number) --> error message
-4) Two argument test (valid file number and alternate key) --> contents of file are displayed with alternate key
+ProgramControl.java tests
+1) No argument test
+- Expected result: list of numbered files displayed
+
+2) Single argument test (valid file number)
+- Expected result: contents of file are displayed with default key
+
+3) Single argument test (invalid file number)
+- Expected result: error message
+
+4) Two argument test (valid file number and valid alternate key)
+- Expected result: contents of file are displayed with alternate key
+
+5) Two argument test (valid file number and invalid alternate key)
+- Expected result: error message
+
+6) Two argument test (invalid file number and valid alternate key)
+- Expected result: error message
+
+7) Two argument test (invalid file number and invalid alternate key)
+- Expected result: error message
