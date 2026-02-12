@@ -52,13 +52,13 @@ public class ProgramControl {
                 File key = new File("ciphers", alternateCipher);
                 cipher cipheredText = new cipher(message, key);
                 System.out.println(cipheredText);
-
-                return;
             }
-        } catch (IOException | NumberFormatException e) {
-            // IOException - file does not exist
-            // NumberFormatException - user typed something that is not a number
-            System.out.println("Not a valid file or not a valid number.");
+        } catch (IOException e) {
+            // File does not exist
+            System.out.println("Not a valid file. File does not exist");
+        } catch (NumberFormatException e) {
+            // User typed something that is not a number
+            System.out.println("Not a valid number.");
         }
     }
 }
