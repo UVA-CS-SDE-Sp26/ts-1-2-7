@@ -8,8 +8,6 @@ public class cipher {
     private String keyInput;
     private String keyOutput;
 
-    private int inputIndex;
-
     public cipher(File cipheredMessage, File key) {
         try (Scanner reader = new Scanner (cipheredMessage)) {
             cipheredText = reader.nextLine();
@@ -25,21 +23,19 @@ public class cipher {
         catch (FileNotFoundException e) {
             System.out.println("Key not found");
         }
-        for (int i = 0; i < cipheredText.length(); i++) {
-           /* currentLetter += cipheredText.charAt(i);
-            inputIndex = keyInput.indexOf(currentLetter);
-            System.out.println(currentLetter);
-            decipheredText += keyOutput.charAt(inputIndex);
-            currentLetter = "";
-            */
-            char letter = cipheredText.charAt(i);
-            int inputIndex = keyInput.indexOf(letter);
-            if(inputIndex != -1) {
-                decipheredText += keyOutput.charAt(inputIndex);
+        if(cipheredText.length() > 0) {
+            for (int i = 0; i < cipheredText.length(); i++) {
+                char letter = cipheredText.charAt(i);
+                int inputIndex = keyInput.indexOf(letter);
+                if (inputIndex != -1) {
+                    decipheredText += keyOutput.charAt(inputIndex);
+                } else {
+                    decipheredText += letter;
+                }
             }
-            else {
-                decipheredText += letter;
-            }
+        }
+        else {
+            System.out.println("Ciphered text is empty");
         }
     }
 
