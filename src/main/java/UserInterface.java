@@ -1,11 +1,49 @@
+import java.io.*;
+import java.util.*;
+
 public class UserInterface {
-    public void displayInterface(){
-        //prints out file list
+    private FileHandler fileHandler; //creates filehandler object
+
+    public UserInterface(FileHandler fileHandler) { //initializes object
+        this.fileHandler = fileHandler;
     }
-    public void displayInterface(int fileNumber){
-        //displays corresponding file and runs default cipher
-    }
-    public void displayInterface(int fileNumber, int cipher){
-        //displays corresponding file and runs corresponding cipher
+
+    public void runProgram(String[] args){
+        try{
+            List<String> fileNames = fileHandler.listFiles();
+
+            if (args.length == 0){//if no arguments, just print list of files
+                for (int i = 0; i < fileNames.size(); i++) {
+                    System.out.println("0" + (i+1) + " " + fileNames.get(i));
+                }
+                return;
+            }
+
+            if (args.length >= 1){ //if one or more arguments, display the file
+                int index = Integer.parseInt(args[0])-1; //converts string into a number
+
+                if (index < 0 || index >= fileNames.size()){ //if given argument does not work
+                    System.out.println("Invalid");
+                    return;
+                }
+
+                String selectFile = fileNames.get(index); //gets selected file
+                File cipherFile = new File("data", selectFile); //creates a file object
+                File key;
+
+                if (args.length == 1){//selects key to decipher with
+                    key = new File("data", "defaultkey.txt");
+                } else {
+                    key = new File("data", args[1]);
+                }
+
+                cipher decipher = new cipher(cipherFile,key); //deciphers the file
+                System.out.println(decipher.toString()); //prints deciphered file
+            }
+        } catch (IOException e) {
+            System.out.println("Error");
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid");
+        }
     }
 }
