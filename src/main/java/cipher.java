@@ -13,7 +13,9 @@ public class cipher {
             StringBuilder message = new StringBuilder();
             while(reader.hasNextLine()){
                 message.append(reader.nextLine());
-                message.append("\n");
+                if(reader.hasNextLine()) {
+                    message.append("\n");
+                }
             }
             cipheredText = message.toString();
         }
@@ -47,6 +49,7 @@ public class cipher {
     public void printCipher() {
         System.out.println(decipheredText);
     }
+
     protected Scanner makeScanner(File file) throws FileNotFoundException{
         return new Scanner(file);
     }
