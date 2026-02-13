@@ -55,6 +55,7 @@ ProgramControlTest
 
 
 FileHandler.java tests
+
 Constructor Tests:
 1. testConstructorWithParameter - Creates FileHandler with custom path
 2. testDefaultConstructor - Creates FileHandler with default "data" path
@@ -72,33 +73,26 @@ reader() Tests:
 2. testReader_EmptyFile - Returns empty string for empty file
 3. testReader_FileNotFound - Throws error when file doesn't exist
 
-UML diagram
-FileHandlerTest
-- fileHandler: FileHandler
-- dataDir: Path
-
-+ setUp() : void
-+ testConstructorWithParameter(): void
-+ testDefaultConstructor(): void
-+ testListFiles_WithMultipleTxtFiles(): void
-+ testListFiles_SortedAlphabetically(): void
-+ testListFiles_FiltersNonTxtFiles(): void
-+ testListFiles_DirectoryNotFound(): void
-+ testListFiles_NoTxtFiles(): void
-+ testListFiles_EmptyDirectory(): void
-+ testReader_ValidFile(): void
-+ testReader_EmptyFile(): void
-+ testReader_FileNotFound(): void
-
-
-
-cipher.java tests
-
-UML diagram
-+
-
 UserInterface.java tests
+- Planning:
+    Run tests to make sure input with argument and input without argument properly run along
+    with ProgramControl. Use mockito for dummy objects.
 
-UML diagram
+runProgramTest()
+    String argument with 1 argument
+    Create mock program control class
+    Create UserInterface object with mock program control class
+    Run ui runProgram method
+    Verify with mockito
+
+runProgramWithNoArgsTest()
+    String argument with no argument
+    Create mock program control class
+    Create UserInterface object with mock program control class
+    Run ui runProgram method
+    Verify with mockito
+
+UML Diagram
+UserInterfaceTest
 + runProgramTest(): void
 + runProgramWithNoArgsTest(): void
