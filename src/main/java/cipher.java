@@ -39,7 +39,7 @@ public class cipher {
         }
     }
 
-    public String toString() {
-        return decipheredText;
+    public void printCipher() {
+        System.out.println(decipheredText);
     }
 }

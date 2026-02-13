@@ -5,23 +5,49 @@ Use Mockito for unit testing
 - Bugs in classes will not affect testing
 
 ProgramControl.java tests
-1) No argument test
-- Expected result: list of numbered files displayed
+- Planning: For testing, there are 5 cases that are needed to be checked. These cases include a no argument test, a valid single argument test,
+a two valid argument test, an invalid file number test, and an invalid alternate key test. Because ProgramControl.java calls both FileHandler.java
+and cipher.java, Mockito should be used to create dummy objects for these classes.
+- Psuedocode:
 
-2) Single argument test (valid file number)
-- Expected result: contents of file are displayed with default key
+noArgTest()
+    String argument with no arguments
+    Create mock cipher class
+    Create mock FileHandler class
+    Call ProgramControl class
+    Run main
+    Verify with Mockito and assertEquals
 
-3) Single argument test (invalid file number)
-- Expected result: error message
+oneArgTest()
+    String argument with one argument
+    Create mock cipher class
+    Call ProgramControl class
+    Run main
+    Verify with assertEquals
 
-4) Two argument test (valid file number and valid alternate key)
-- Expected result: contents of file are displayed with alternate key
+twoArgTest()
+    String argument with two arguments
+    Create mock cipher class
+    Call ProgramControl class
+    Run main
+    Verify with assertEquals
 
-5) Two argument test (valid file number and invalid alternate key)
-- Expected result: error message
+invalidNumTest()
+    String argument with an invalid number argument
+    Create mock cipher class
+    Call ProgramControl class
+    Verify with assertThrows
 
-6) Two argument test (invalid file number and valid alternate key)
-- Expected result: error message
+invalidFileTest()
+    String argument with an invalid file argument
+    Create mock cipher class
+    Call ProgramControl class
+    Verify with assertThrows
 
-7) Two argument test (invalid file number and invalid alternate key)
-- Expected result: error message
+UML diagram
+ProgramControlTest
++ noArgTest(): void
++ oneArgTest(): void
++ twoArgTest(): void
++ invalidNumTest(): void
++ invalidFileTest(): void
