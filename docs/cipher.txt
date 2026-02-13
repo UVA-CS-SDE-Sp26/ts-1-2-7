@@ -36,7 +36,7 @@ while letterCount < cipheredText.length
 return decipheredText
 
 Testing:
-For testing, I used the sonnet from last assignment, as it has differrent punctuations, new lines,
+For testing, I used the sonnet from last assignment, as it has different punctuations, new lines,
 capital, and lowercase letters. I tested it using a similar junit test to the previous assignment
 and put in the expected output as well as the output from my program. I also added in testers for
 printSonnet() and makeScanner().
