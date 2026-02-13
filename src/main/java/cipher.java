@@ -42,4 +42,8 @@ public class cipher {
     public void printCipher() {
         System.out.println(decipheredText);
     }
+
+//    public String toString() {
+//        return decipheredText;
+//    }
 }
