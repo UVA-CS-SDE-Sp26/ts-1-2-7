@@ -36,7 +36,6 @@ public class ProgramControl {
     // Constructors
     public ProgramControl() {
         fileHandler = new FileHandler();
-        cipher = new cipher(message, key);
     }
 
     // Constructor for testing purposes

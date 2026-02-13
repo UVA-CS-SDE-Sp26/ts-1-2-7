@@ -13,19 +13,21 @@ public class cipher {
             StringBuilder message = new StringBuilder();
             while(reader.hasNextLine()){
                 message.append(reader.nextLine());
-                message.append("\n");
+                if(reader.hasNextLine()) {
+                    message.append("\n");
+                }
             }
             cipheredText = message.toString();
         }
         catch (FileNotFoundException e) {
-            System.out.println("Ciphered text file not found");
+            throw new IllegalArgumentException("Ciphered text file not found");
         }
         try(Scanner keyReader = makeScanner(key)) {
             keyInput = keyReader.next();
             keyOutput = keyReader.next();
         }
         catch (FileNotFoundException e) {
-            System.out.println("Key not found");
+            throw new IllegalArgumentException("Key not found");
         }
         if(cipheredText != null && cipheredText.length() > 0) {
             for (int i = 0; i < cipheredText.length(); i++) {
@@ -47,6 +49,7 @@ public class cipher {
     public void printCipher() {
         System.out.println(decipheredText);
     }
+
     protected Scanner makeScanner(File file) throws FileNotFoundException{
         return new Scanner(file);
     }
