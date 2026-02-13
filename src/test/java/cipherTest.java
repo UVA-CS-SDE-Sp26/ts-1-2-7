@@ -7,11 +7,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class cipherTest {
 
     @Test
-    void printCipher1() {
-        File key1 = new File("./ciphers/key.txt");
-        File test1 = new File("./ciphers/Tester.txt");
-        cipher Cipher1 = new cipher(test1, key1);
-        assertDoesNotThrow(() -> Cipher1.printCipher());
+    void printCipher() {
+        File key = new File("./ciphers/key.txt");
+        File test = new File("./ciphers/Tester.txt");
+        cipher Cipher = new cipher(test, key);
+        assertDoesNotThrow(() -> Cipher.printCipher());
     }
 
 
