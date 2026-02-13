@@ -43,6 +43,7 @@ public class cipher {
         }
     }
 
+    // For testing purposes (ProgramControlTest.java)
     public void printCipher() {
         System.out.println(decipheredText);
     }
