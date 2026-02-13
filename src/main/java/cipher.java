@@ -23,7 +23,7 @@ public class cipher {
         catch (FileNotFoundException e) {
             System.out.println("Key not found");
         }
-        if(cipheredText.length() > 0) {
+        if(cipheredText != null && cipheredText.length() > 0) {
             for (int i = 0; i < cipheredText.length(); i++) {
                 char letter = cipheredText.charAt(i);
                 int inputIndex = keyInput.indexOf(letter);
