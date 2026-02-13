@@ -2,14 +2,21 @@ import java.io.*;
 import java.util.*;
 
 public class UserInterface {
-    private FileHandler fileHandler; //creates filehandler object
+    private ProgramControl programControl;
 
-    public UserInterface(FileHandler fileHandler) { //initializes object
-        this.fileHandler = fileHandler;
+    public UserInterface() {
+        this.programControl = new ProgramControl();
     }
 
-    public void runProgram(String[] args){
-        try{
+    public UserInterface(ProgramControl programControl) {
+        this.programControl = programControl;
+    }
+
+    public void runProgram(String[] args) {
+        programControl.main(args);
+    }
+}
+        /*
             List<String> fileNames = fileHandler.listFiles();
 
             if (args.length == 0){//if no arguments, just print list of files
@@ -32,7 +39,7 @@ public class UserInterface {
                 File key;
 
                 if (args.length == 1){//selects key to decipher with
-                    key = new File("data", "defaultkey.txt");
+                    key = new File("data", "key");
                 } else {
                     key = new File("data", args[1]);
                 }
@@ -40,10 +47,4 @@ public class UserInterface {
                 cipher decipher = new cipher(cipherFile,key); //deciphers the file
                 System.out.println(decipher.toString()); //prints deciphered file
             }
-        } catch (IOException e) {
-            System.out.println("Error");
-        } catch (NumberFormatException e) {
-            System.out.println("Invalid");
-        }
-    }
-}
+    */
