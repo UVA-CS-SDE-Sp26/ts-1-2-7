@@ -3,7 +3,28 @@
 
 Add Mockito Testing
 
-displays list of files when no argument is given
-display corresponding file if number argument is given
-exits after display is given post-call upon file w/without argument
+UserInterface.java tests
+- Planning:
+
+runProgramTest()
+    String argument with 1 argument
+    Create mock program control class
+    Create UserInterface object with mock program control class
+    Run ui runProgram method
+    Verify with mockito
+
+runProgramWithNoArgsTest()
+    String argument with no argument
+    Create mock program control class
+    Create UserInterface object with mock program control class
+    Run ui runProgram method
+    Verify with mockito
+
+UML Diagram
+UserInterfaceTest
++ runProgramTest(): void
++ runProgramWithNoArgsTest(): void
+
+
+
 
