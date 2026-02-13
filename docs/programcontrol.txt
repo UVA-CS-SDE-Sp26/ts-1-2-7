@@ -1,8 +1,7 @@
 // Testing plan documentation
 
 Use Mockito for unit testing
-- Create a dummy object for classes
-- Bugs in classes will not affect testing
+- Create a dummy object for classes so bugs in classes will not affect testing
 
 ProgramControl.java tests
 - Planning: For testing, there are 5 cases that are needed to be checked. These cases include a no argument test, a valid single argument test,
@@ -44,7 +43,6 @@ invalidFileTest()
     Call ProgramControl class
     Verify with assertThrows
 
-
 UML diagram
 ProgramControlTest
 + noArgTest(): void
@@ -54,8 +52,8 @@ ProgramControlTest
 + invalidFileTest(): void
 
 
-FileHandler.java tests
 
+FileHandler.java tests
 Constructor Tests:
 1. testConstructorWithParameter - Creates FileHandler with custom path
 2. testDefaultConstructor - Creates FileHandler with default "data" path
@@ -73,3 +71,33 @@ reader() Tests:
 2. testReader_EmptyFile - Returns empty string for empty file
 3. testReader_FileNotFound - Throws error when file doesn't exist
 
+UML diagram
+FileHandlerTest
+- fileHandler: FileHandler
+- dataDir: Path
+
++ setUp() : void
++ testConstructorWithParameter(): void
++ testDefaultConstructor(): void
++ testListFiles_WithMultipleTxtFiles(): void
++ testListFiles_SortedAlphabetically(): void
++ testListFiles_FiltersNonTxtFiles(): void
++ testListFiles_DirectoryNotFound(): void
++ testListFiles_NoTxtFiles(): void
++ testListFiles_EmptyDirectory(): void
++ testReader_ValidFile(): void
++ testReader_EmptyFile(): void
++ testReader_FileNotFound(): void
+
+
+
+cipher.java tests
+
+UML diagram
++
+
+UserInterface.java tests
+
+UML diagram
++ runProgramTest(): void
++ runProgramWithNoArgsTest(): void
