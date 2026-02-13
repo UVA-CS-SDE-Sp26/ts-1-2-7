@@ -1,29 +1,10 @@
 // Team Member A
 // Command line interface used by the user to run the program
 
-Add Mockito Testing
-
-UserInterface.java tests
-- Planning:
-
-runProgramTest()
-    String argument with 1 argument
-    Create mock program control class
-    Create UserInterface object with mock program control class
-    Run ui runProgram method
-    Verify with mockito
-
-runProgramWithNoArgsTest()
-    String argument with no argument
-    Create mock program control class
-    Create UserInterface object with mock program control class
-    Run ui runProgram method
-    Verify with mockito
-
-UML Diagram
-UserInterfaceTest
-+ runProgramTest(): void
-+ runProgramWithNoArgsTest(): void
+User Interface should display 3 different things depending on how project was called:
+1. No arguments - display list of files with "0" + file number and then the filename
+2. 1 argument (specific file called) - display contents of file deciphered using default cipher
+3. 2 arguments (specific file and cipher) - display contents of file deciphered using called cipher
 
 
 
