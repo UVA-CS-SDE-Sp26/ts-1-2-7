@@ -9,14 +9,18 @@ public class cipher {
     private String keyOutput;
 
     public cipher(File cipheredMessage, File key) {
-        try (Scanner reader = new Scanner (cipheredMessage)) {
-            cipheredText = reader.nextLine();
-            System.out.println(cipheredText);
+        try (Scanner reader = makeScanner (cipheredMessage)) {
+            StringBuilder message = new StringBuilder();
+            while(reader.hasNextLine()){
+                message.append(reader.nextLine());
+                message.append("\n");
+            }
+            cipheredText = message.toString();
         }
         catch (FileNotFoundException e) {
             System.out.println("Ciphered text file not found");
         }
-        try(Scanner keyReader = new Scanner(key)) {
+        try(Scanner keyReader = makeScanner(key)) {
             keyInput = keyReader.next();
             keyOutput = keyReader.next();
         }
@@ -39,11 +43,14 @@ public class cipher {
         }
     }
 
+    // For testing purposes (ProgramControlTest.java)
     public void printCipher() {
         System.out.println(decipheredText);
     }
-
-//    public String toString() {
-//        return decipheredText;
-//    }
+    protected Scanner makeScanner(File file) throws FileNotFoundException{
+        return new Scanner(file);
+    }
+   public String toString() {
+        return decipheredText;
+    }
 }

@@ -9,10 +9,6 @@ An example will be provided. Document this in cipher.txt.
 
 Team Member D: Kate Walldorf jtu2jm
 
-Questions:
-- 1 input or two?
-- how to validate ciphered text?
-
 Pseudocode:
 
 import scanning tools
