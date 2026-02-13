@@ -44,6 +44,7 @@ invalidFileTest()
     Call ProgramControl class
     Verify with assertThrows
 
+
 UML diagram
 ProgramControlTest
 + noArgTest(): void
@@ -51,3 +52,24 @@ ProgramControlTest
 + twoArgTest(): void
 + invalidNumTest(): void
 + invalidFileTest(): void
+
+
+FileHandler.java tests
+
+Constructor Tests:
+1. testConstructorWithParameter - Creates FileHandler with custom path
+2. testDefaultConstructor - Creates FileHandler with default "data" path
+
+listFiles() Tests:
+1. testListFiles_WithMultipleTxtFiles - Returns 3 .txt files
+2. testListFiles_SortedAlphabetically - Returns files in alphabetical order
+3. testListFiles_FiltersNonTxtFiles - Ignores non-.txt files
+4. testListFiles_DirectoryNotFound - Throws error when directory doesn't exist
+5. testListFiles_NoTxtFiles - Throws error when only non-txt files exist
+6. testListFiles_EmptyDirectory - Throws error when directory is empty
+
+reader() Tests:
+1. testReader_ValidFile - Reads and returns file content correctly
+2. testReader_EmptyFile - Returns empty string for empty file
+3. testReader_FileNotFound - Throws error when file doesn't exist
+
