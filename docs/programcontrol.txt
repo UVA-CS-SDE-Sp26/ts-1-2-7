@@ -97,3 +97,29 @@ UserInterfaceTest
 + runProgramTest(): void
 + runProgramWithNoArgsTest(): void
 
+Cipher java Tests:
+Planning: For testing, I used the sonnet from last assignment, as it has different punctuations, new lines,
+          capital, and lowercase letters. I tested it using a similar junit test to the previous assignment
+          and put in the expected output as well as the output from my program. I also added in testers for
+          printSonnet() and makeScanner().
+void printCipher():
+    -takes a key and ciphered text as inputs
+    -verifies that calling printCipher() does not throw an exception
+    -confirms that the method prints the deciphered text correctly
+void makeScanner():
+    -takes a valid file as input
+    -confirms it returns a Scanner object that isn't null
+    -verifies that the scanner can read from the file
+    -ensures the method correctly creates a Scanner for file input
+void testToString()
+    -takes a difficult sonnet as a ciphered text and a key as inputs
+    -uses toString() to return the deciphered message as a String
+    -compares the returned string to the exact expected output
+    -confirms that formatting (punctuation, capitalization, and new llines) is correct
+
+UML Diagram:
+cipherTest
++printCipher(): void
++makeScanner(): void
++testToString(): void
+
